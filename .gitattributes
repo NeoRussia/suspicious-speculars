@@ -1,2 +1,1 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# never let git touch the bytes: these are fetched and hash-checked by the patcher*.zip binary -text -eol
