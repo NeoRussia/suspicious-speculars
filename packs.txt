@@ -1,4 +1,4 @@
 MANIFEST	1
-VERSION	2026-11-17.2
-PACK	Suspicious Speculars - Eclipse Addon.zip	cc652de41d3b32da9784d2437761e4f90e0c0fe9337149b6e936fdf04ae30e0e	https://raw.githubusercontent.com/NeoRussia/suspicious-speculars/main/packs/Suspicious%20Speculars%20-%20Eclipse%20Addon.zip
-PACK	Suspicious Speculars.zip	7521c5fe6cbfc3fd2d4a0a7389a4d3cf0a0845b85ca9e65ae28571c40d510877	https://raw.githubusercontent.com/NeoRussia/suspicious-speculars/main/packs/Suspicious%20Speculars.zip
+VERSION	2026-11-17.4
+PACK	Suspicious Speculars - Eclipse Addon.zip	58c5628f65ff19f9896f03241e4c27ff3a8125a5672c3e812b8cafa02978f644	https://raw.githubusercontent.com/NeoRussia/suspicious-speculars/main/packs/Suspicious%20Speculars%20-%20Eclipse%20Addon.zip
+PACK	Suspicious Speculars.zip	e1851e81ca0ea052df9fd491af5d8a1510c3b2b4d60bace50a7a8811b25ce4c2	https://raw.githubusercontent.com/NeoRussia/suspicious-speculars/main/packs/Suspicious%20Speculars.zip
