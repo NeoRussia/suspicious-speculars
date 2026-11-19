@@ -1,17 +1,25 @@
 # Suspicious Speculars — download host
 
+![Prismatic film on a shape block from ArchitectureCraft: Renovated](docs/screenshots/prismatic-film.jpg)
+
+*Shape: [ArchitectureCraft: Renovated](https://github.com/NeoRussia/ArchitectureCraft-Renovated). The prismatic film over it is the shader's.*
+
 This repository holds the two resource packs that the Suspicious Speculars patcher
 (`suspicious-speculars`) fetches into a player's `resourcepacks/` folder. It is a
 download location, not the mod's source.
 
-| File | Size | SHA-256 |
-|---|---|---|
-| `packs/Suspicious Speculars.zip` | 1.84 MB | `e488bfa50b6e7f41c4685896d40ea25003819a540d1a130ce39336e360549534` |
-| `packs/Suspicious Speculars - Eclipse Addon.zip` | 0.14 MB | `19b4ba795bcbc973dbd2fb78f50328e4c651159fe600be7060feffc761bed8df` |
+| File | Size |
+|---|---|
+| `packs/Suspicious Speculars.zip` | 1.84 MB |
+| `packs/Suspicious Speculars - Eclipse Addon.zip` | 0.14 MB |
 
-The mod reads these paths from `packs.txt` inside its own jar and verifies each
-download against the hash above before enabling it. A file whose bytes change must be
-accompanied by a rebuilt mod, or it will be rejected and deleted.
+The SHA-256 of each archive is in [`packs.txt`](packs.txt) — the manifest the installer downloads
+and verifies against — so the hashes live in exactly one place and cannot drift from the files. A
+copy of that manifest also travels inside the mod jar, for the run that cannot reach this host.
+
+The installer fetches the two paths from that manifest and verifies every download against its hash
+before enabling it. A file whose bytes change must come with an updated `packs.txt`, or the download
+is rejected and deleted.
 
 They are fetched as raw files from the `main` branch:
 
