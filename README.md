@@ -5,27 +5,46 @@
 *Shape: [ArchitectureCraft: Renovated](https://github.com/NeoRussia/ArchitectureCraft-Renovated). The prismatic film over it is the shader's.*
 
 This repository holds the two resource packs that the Suspicious Speculars patcher
-(`suspicious-speculars`) fetches into a player's `resourcepacks/` folder. It is a
-download location, not the mod's source.
+(`suspicious-speculars`) fetches into a player's `resourcepacks/` folder, and the shader patch it
+applies. It is a download location, not the mod's source.
 
 | File | Size |
 |---|---|
 | `packs/Suspicious Speculars.zip` | 1.84 MB |
 | `packs/Suspicious Speculars - Eclipse Addon.zip` | 0.14 MB |
+| `patch/patch-<hash>.zip` | 0.28 MB |
 
-The SHA-256 of each archive is in [`packs.txt`](packs.txt) — the manifest the installer downloads
-and verifies against — so the hashes live in exactly one place and cannot drift from the files. A
+The SHA-256 of each pack is in [`packs.txt`](packs.txt) - the manifest the installer downloads
+and verifies against - so the hashes live in exactly one place and cannot drift from the files. A
 copy of that manifest also travels inside the mod jar, for the run that cannot reach this host.
 
-The installer fetches the two paths from that manifest and verifies every download against its hash
-before enabling it. A file whose bytes change must come with an updated `packs.txt`, or the download
-is rejected and deleted.
+The patch is published the same way but with its own manifest, `patch/patch.txt`:
+
+    MANIFEST 1
+    REQUIRES 2                    patch format the data needs (see below)
+    VERSION  <sha256> <files>     identity of the bundle, also the copy in the jar
+    BASE     e89e6c6              the Eclipse commit it was built against
+    PATCH    patch-<hash>.zip  <sha256>  patch-<hash>.zip
+
+The patch holds none of Eclipse's code: it stores our changed lines, and the applier copies any stock
+file it needs from the player's own Eclipse archive, so this host never redistributes their pack.
+
+The launcher reads it on every start and downloads only when `VERSION` differs from what is
+installed. `BASE` makes a patch built for another Eclipse commit a refusal rather than a failed
+patch, and `REQUIRES` does the same for a patch format newer than the launcher understands. The
+bundle name carries its hash because raw.githubusercontent.com serves through a CDN that can keep
+an old blob at a fixed URL for minutes; a new name is a guaranteed cache miss.
+
+The installer fetches the two pack paths from that manifest and verifies every download against its
+hash before enabling it. A file whose bytes change must come with an updated `packs.txt`, or the
+download is rejected and deleted.
 
 They are fetched as raw files from the `main` branch:
 
     https://raw.githubusercontent.com/NeoRussia/suspicious-speculars/main/packs/<name>
+    https://raw.githubusercontent.com/NeoRussia/suspicious-speculars/main/patch/patch.txt
 
-Do not move them out of `packs/`, rename them, or store them with Git LFS — LFS serves
+Do not move them out of `packs/` or `patch/`, rename them, or store them with Git LFS - LFS serves
 a pointer instead of the archive and every download would fail its hash check.
 
 ## What the two packs are
