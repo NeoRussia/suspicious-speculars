@@ -84,24 +84,29 @@ pointer instead of the archive and every download would fail its hash check.
 
 ## Credits
 
-The packs contain **no base textures** from any other project: 5,613 smoothness/F0/emission
-maps (`_s`), 6 normal maps (`_n`) and 60 derived emissive layers with their `.mcmeta`
-files. Every one is a companion map or a derived layer.
+The packs contain **no copies of another project's art**: 5,663 smoothness/F0/emission maps
+(`_s`), 6 normal maps (`_n`) and 60 derived active-emissive layers (27 with `.mcmeta` files).
+Seven base textures are *replaced* rather than accompanied - six ProjectRed lamp faces and one
+Xtones Lave face - each reworked at 16x16 rather than copied.
 
 **Base art the maps are derived from**, by namespace:
 
-| Source | Files | What the maps describe |
+| Source | Maps | What the maps describe |
 |---|---|---|
-| [GregTech CEu](https://github.com/GregTechCEu/GregTech) 1.12.2-2.8.10-beta | 2,204 | material families, casings, pipes, machine overlays |
+| [GregTech CEu](https://github.com/GregTechCEu/GregTech) 1.12.2-2.8.10-beta | 2,134 | material families, casings, pipes, machine overlays |
 | [Chisel](https://github.com/Chisel-Team/Chisel) 1.12.2-1.0.2.45 | 3,425 | decorative blocks: concrete, glass, metals, ice, wool, lamps |
-| [Xtones](https://github.com/TehKrush/Xtones) (via SuperSymmetry) | 7 | Lave faces |
-| [ProjectRed](https://github.com/MrTJP/ProjectRed) | 20 | lamps, illuminated blocks |
-| [Applied Energistics 2](https://github.com/AppliedEnergistics/Applied-Energistics-2) | 19 | cable and machine casings |
-| [Pyrotech](https://github.com/codetaylor/pyrotech) | 6 | refractory blocks |
-| [Serene Seasons](https://github.com/TheAdubbz/SereneSeasons) | 6 | season tint layers |
-| [Biomes O' Plenty](https://github.com/Glitchfiend/BiomesOPlenty) | 2 | stone types |
-| [SuperSymmetry](https://github.com/SymmetricDevs/Supersymmetry) pack + [Susy-Core](https://github.com/SymmetricDevs/Susy-Core) | 2 | the pack's own blocks |
-| Minecraft 1.12.2 (Mojang) | 17 | vanilla blocks |
+| [Xtones](https://github.com/TehKrush/Xtones) 1.2.2 (via SuperSymmetry) | 40 | glaxx, Lave and sols faces |
+| [ProjectRed](https://github.com/MrTJP/ProjectRed) 4.9.4.120 | 20 | lamps, illuminated blocks |
+| [Applied Energistics 2](https://github.com/AppliedEnergistics/Applied-Energistics-2) (UEL 0.56.6) | 19 | cable and machine casings |
+| [Pyrotech](https://github.com/codetaylor/pyrotech) 1.12.2-1.6.19 | 6 | refractory blocks |
+| [Serene Seasons](https://github.com/TheAdubbz/SereneSeasons) 1.12.2-1.2.18 | 6 | season tint layers |
+| [Biomes O' Plenty](https://github.com/Glitchfiend/BiomesOPlenty) 1.12.2-7.0.1.2445 | 2 | stone types |
+| [SuperSymmetry](https://github.com/SymmetricDevs/Supersymmetry) pack + [Susy-Core](https://github.com/SymmetricDevs/Susy-Core) | 1 | the pack's own blocks |
+| Minecraft 1.12.2 (Mojang) | 16 | vanilla blocks |
+| **Total** | **5,669** | 5,663 `_s` + 6 `_n` |
+
+The column counts the maps shipped per namespace, one per covered face, so it can be checked
+against either pack directly.
 
 **Map data reused from other PBR packs**
 
@@ -127,5 +132,6 @@ SuperSymmetry (`LICENSE`); contributions follow SuperSymmetry's AI usage policy
 (`AI_POLICY.md`). Redistributing a *derived* map also depends on the terms of the pack it was
 derived from: Egregious Emissives is LGPL-3.0-only and compatible, GregTech CEu is LGPL-3.0,
 while Chisel, Xtones, ProjectRed, Pyrotech, Serene Seasons and Biomes O' Plenty each carry
-their own terms and KuramA's repository publishes no licence file I could find. Those are the
-ones to clear with their authors before this repository is made public.
+their own terms and KuramA's repository publishes no licence file I could find. The same applies to
+the seven base textures this pack replaces (six ProjectRed lamp faces, one Xtones Lave face): they
+are reworked rather than copied, but they still derive from that art.
